@@ -1,6 +1,5 @@
 import java.util.*;
 class Notification {
-	class Notification {
 	public static final String RESET = "\u001B[0m";
 	public static final String RED = "\u001B[31m";
 	public static final String GR = "\u001B[32m";
@@ -8,7 +7,7 @@ class Notification {
 	public static final String B = "\u001B[34m";
 	public static final String PURP = "\u001B[35m";
 	public static final String CY = "\u001B[36m";
-	public static final String ANSI_WHITE = "\u001B[37m";
+	public static final String WHITE = "\u001B[37m";
 		
 	public static void main(String [] args) {
 		Contact [] contacts = new Contact[4];
@@ -24,7 +23,7 @@ class Notification {
 	
 	/* The method prints the message of the specific Contact the user chose. */
 	public static String showMessageInfo(Contact[] contacts, int choice) {
-		System.out.println("Message From: " + contacts[choice-1].getFirstName());
+		System.out.println("Message From: "+GR + contacts[choice-1].getFirstName()+RESET);
 		return contacts[choice-1].message.toString();
 	}
 	
