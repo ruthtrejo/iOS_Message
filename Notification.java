@@ -17,14 +17,14 @@ class Notification {
 			//flush scanner
 			scnr.nextLine();
 			
-			System.out.println("\nWould you like to view their phone number? [y] Yes [n] no");
+			System.out.print("\nWould you like to view their phone number? [y] Yes [n] no\n> ");
 			getPhoneNo = scnr.nextLine().charAt(0);
 			
 			//If the user wants to view the phone number, show it. 
 			if(getPhoneNo == 'y' || getPhoneNo == 'y')
-				System.out.println("Phone Number: " + showPhoneNumber(contacts, choice));
+				System.out.println("\nPhone Number: " + showPhoneNumber(contacts, choice));
 			
-			System.out.println("\nWould you like to view another message? [y] Yes [n] no");
+			System.out.print("\nWould you like to view another message? [y] Yes [n] no\n> ");
 			repeat = scnr.nextLine().charAt(0);
 			
 			//If the user does not want to repeat the menu, end loop. 
@@ -33,7 +33,7 @@ class Notification {
 			
 		}//end while
 		
-		System.out.println("\n Exiting iMessage application...\nDone");
+		System.out.println("\nExiting iMessage application...\nDone");
 		
 		
 	}//end main
