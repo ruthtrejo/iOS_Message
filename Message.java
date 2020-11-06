@@ -1,11 +1,22 @@
 package iOS_Message;
 
 public class Message {
-	String text;
 	int month;
 	int day;
 	String time;
 	String timeOfDay;
+	String text;
+	
+	//Default Constructor
+	Message(){
+	}
+	Message(int month , int day, String time, String timeOfDay, String text){
+		this.month = month;
+		this.day = day;
+		this.time = time;
+		this.timeOfDay = timeOfDay;
+		this.text = text;
+	}
 	
 	public void setText(String text){
 		this.text = text;
@@ -37,6 +48,12 @@ public class Message {
 	}
 	public String getTimeOfDay(){
 		return this.timeOfDay;
+	}
+	
+	public String toString() {
+		String d = String.format("%02d" , this.day);
+		String m = String.format("%02d" , this.month);
+		return m + "/" d + " " + this.time + " " + this.timeOfDay + "\n" + this.text;
 	}
 	
 	
