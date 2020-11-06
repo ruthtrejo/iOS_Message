@@ -1,36 +1,53 @@
 import java.util.*;
 class Notification {
-	public static final String RESET = "\u001B[0m";
-	public static final String RED = "\u001B[31m";
-	public static final String GR = "\u001B[32m";
-	public static final String ANSI_YELLOW = "\u001B[33m";
-	public static final String B = "\u001B[34m";
-	public static final String PURP = "\u001B[35m";
-	public static final String CY = "\u001B[36m";
-	public static final String WHITE = "\u001B[37m";
 		
 	public static void main(String [] args) {
 		Contact [] contacts = new Contact[4];
+		boolean sentinel = false;
+		int choice = 0;
+		char getPhoneNo, repeat;
+		
 		System.out.println("Hello User, welcome to iMessage!\n\n");
-//		while(true){
+		while(!sentinel){
 			displayMenu(contacts);
 			Scanner scnr = new Scanner(System.in);
-			int choice = scnr.nextInt();
-			System.out.println(CY + showMessageInfo(contacts,choice) + RESET);
-//		}
+			choice = scnr.nextInt();
+			System.out.println(showMessageInfo(contacts,choice));
+			
+			//flush scanner
+			scnr.nextLine();
+			
+			System.out.println("\nWould you like to view their phone number? [y] Yes [n] no");
+			getPhoneNo = scnr.nextLine().charAt(0);
+			
+			//If the user wants to view the phone number, show it. 
+			if(getPhoneNo == 'y' || getPhoneNo == 'y')
+				System.out.println("Phone Number: " + showPhoneNumber(contacts, choice));
+			
+			System.out.println("\nWould you like to view another message? [y] Yes [n] no");
+			repeat = scnr.nextLine().charAt(0);
+			
+			//If the user does not want to repeat the menu, end loop. 
+			if(repeat == 'n' || repeat == 'n')
+				sentinel = true;
+			
+		}//end while
 		
-	}
+		System.out.println("\n Exiting iMessage application...\nDone");
+		
+		
+	}//end main
 	
 	/* The method prints the message of the specific Contact the user chose. */
 	public static String showMessageInfo(Contact[] contacts, int choice) {
-		System.out.println("Message From: "+GR + contacts[choice-1].getFirstName()+RESET);
+		System.out.println("\nMessage From: "+ contacts[choice-1].getFirstName());
 		return contacts[choice-1].message.toString();
-	}
+	}//end showMessageInfo
 	
 	/* The method prints the Phone Number of the specific Contact the user chose. */
 	public static String showPhoneNumber(Contact[] contacts, int choice) {
 		return contacts[choice-1].phoneNumber;
-	}
+	}//end showPhoneNumber
 	
 	/* The method displayed the menu that allows the user to choose. */
 	public static void displayMenu(Contact[] contacts) {
@@ -41,7 +58,7 @@ class Notification {
 			System.out.println((i+1) + ". " + contacts[i].getFirstName());
 		}
 		System.out.print("\nPlease select a contact you would like to view [1-4]:\n> ");
-	}
+	}//end displayMenu
 	
 	/* The method will fill the contact array in the main menu with the contact list provided to students. */
 	public static void fillContacts(Contact[] contacts) {
@@ -81,5 +98,5 @@ class Notification {
 		contacts[3].setLastName("Trejo");
 		contacts[3].setPhoneNumber("915-741-2589");
 		contacts[3].setMessage(ruth);
-	}
-}
+	}//end fillContacts
+}//end Notification class
