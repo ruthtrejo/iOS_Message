@@ -1,5 +1,3 @@
-package iOS_Message;
-
 class Contact {
 	String firstName;
 	String lastName;

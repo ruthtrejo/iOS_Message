@@ -1,5 +1,3 @@
-package iOS_Message;
-
 class Message {
 	int month;
 	int day;
@@ -53,7 +51,7 @@ class Message {
 	public String toString() {
 		String d = String.format("%02d" , this.day);
 		String m = String.format("%02d" , this.month);
-		return m + "/" d + " " + this.time + " " + this.timeOfDay + "\n" + this.text;
+		return m + "/" + d + " " + this.time + " " + this.timeOfDay + "\n" + this.text;
 	}
 	
 	

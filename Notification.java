@@ -1,14 +1,21 @@
-package iOS_Message;
-
-public class Notification {
+import java.util.*;
+class Notification {
 	public static void main(String [] args) {
 		Contact [] contacts = new Contact[4];
+		System.out.println("Hello User, welcome to iMessage!");
+//		while(true){
+			displayMenu(contacts);
+			
+			Scanner scnr = new Scanner(System.in);
+			int choice = scnr.nextInt();
+			System.out.println(showMessageInfo(contacts,choice));
+//		}
 		
-		displayMenu(contacts);
 	}
 	
 	/* The method prints the message of the specific Contact the user chose. */
-	public static void showMessageInfo(Contact[] contacts, int choice) {
+	public static String showMessageInfo(Contact[] contacts, int choice) {
+		System.out.println("Message From: " + contacts[choice-1].getFirstName());
 		return contacts[choice-1].message.toString();
 	}
 	
@@ -23,8 +30,9 @@ public class Notification {
 		
 		System.out.print("The following Contacts sent you a message:\n"); 
 		for(int i = 0; i < contacts.length; i++) {
-			System.out.println((i+1) + ". " + contacts.getFirstName());
+			System.out.println((i+1) + ". " + contacts[i].getFirstName());
 		}
+		System.out.println("Please select a contact you would like to view [1-4]:\n");
 	}
 	
 	/* The method will fill the contact array in the main menu with the contact list provided to students. */
@@ -56,7 +64,7 @@ public class Notification {
 		ruth.setText("so... I just wasted another $25 in COD mobile");
 		ruth.setMonth(11);
 		ruth.setDay(03);
-		ruth.time("11:54");
+		ruth.setTime("11:54");
 		ruth.setTimeOfDay("PM");
 		
 		//setting contact information for Ruth
