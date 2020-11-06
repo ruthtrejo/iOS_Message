@@ -1,6 +1,6 @@
 package iOS_Message;
 
-public class Message {
+class Message {
 	int month;
 	int day;
 	String time;
