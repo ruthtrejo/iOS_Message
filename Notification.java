@@ -7,12 +7,12 @@ public class Notification {
 	
 	/* The method prints the message of the specific Contact the user chose. */
 	public static void showMessageInfo(Contact [] contacts, int choice) {
-		
+		return contacts[choice-1].message.toString();
 	}
 	
 	/* The method prints the Phone Number of the specific Contact the user chose. */
 	public static String showPhoneNumber(Contact [] contacts, int choice) {
-		
+		return contacts[choice-1].phoneNumber;
 	}
 	
 	/* The method displayed the menu that allows the user to choose. */
