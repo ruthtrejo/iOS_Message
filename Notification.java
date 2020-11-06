@@ -2,10 +2,9 @@ import java.util.*;
 class Notification {
 	public static void main(String [] args) {
 		Contact [] contacts = new Contact[4];
-		System.out.println("Hello User, welcome to iMessage!");
+		System.out.println("Hello User, welcome to iMessage!\n\n");
 //		while(true){
 			displayMenu(contacts);
-			
 			Scanner scnr = new Scanner(System.in);
 			int choice = scnr.nextInt();
 			System.out.println(showMessageInfo(contacts,choice));
@@ -32,7 +31,7 @@ class Notification {
 		for(int i = 0; i < contacts.length; i++) {
 			System.out.println((i+1) + ". " + contacts[i].getFirstName());
 		}
-		System.out.println("Please select a contact you would like to view [1-4]:\n");
+		System.out.print("\nPlease select a contact you would like to view [1-4]:\n> ");
 	}
 	
 	/* The method will fill the contact array in the main menu with the contact list provided to students. */
