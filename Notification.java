@@ -1,5 +1,15 @@
 import java.util.*;
 class Notification {
+	class Notification {
+	public static final String RESET = "\u001B[0m";
+	public static final String RED = "\u001B[31m";
+	public static final String GR = "\u001B[32m";
+	public static final String ANSI_YELLOW = "\u001B[33m";
+	public static final String B = "\u001B[34m";
+	public static final String PURP = "\u001B[35m";
+	public static final String CY = "\u001B[36m";
+	public static final String ANSI_WHITE = "\u001B[37m";
+		
 	public static void main(String [] args) {
 		Contact [] contacts = new Contact[4];
 		System.out.println("Hello User, welcome to iMessage!\n\n");
@@ -7,7 +17,7 @@ class Notification {
 			displayMenu(contacts);
 			Scanner scnr = new Scanner(System.in);
 			int choice = scnr.nextInt();
-			System.out.println(showMessageInfo(contacts,choice));
+			System.out.println(CY + showMessageInfo(contacts,choice) + RESET);
 //		}
 		
 	}
