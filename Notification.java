@@ -6,17 +6,22 @@ public class Notification {
 	}
 	
 	/* The method prints the message of the specific Contact the user chose. */
-	public static void showMessageInfo(Contact [] contacts) {
+	public static void showMessageInfo(Contact [] contacts, int choice) {
 		
 	}
 	
 	/* The method prints the Phone Number of the specific Contact the user chose. */
-	public static String showPhoneNumber(Contact [] contacts)) {
+	public static String showPhoneNumber(Contact [] contacts, int choice) {
 		
 	}
 	
-	/* The method displayed the meny that allows the user to choose. */
+	/* The method displayed the menu that allows the user to choose. */
 	public static void displayMenu() {
+		System.out.print("The following Contacts sent you a message:\n"+"");
+	}
+	
+	/* The method will fill the contact array in the main menu with the contact list provided to students. */
+	public static void fillContacts(Contact [] contacts) {
 		
 	}
 }
