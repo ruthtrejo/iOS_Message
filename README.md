@@ -10,7 +10,7 @@ Background: Objects represent real world objects. They have states and behaviors
 Assignment: In this assignment you will create a contact list and display the following:
 
 	> A list that shows the full name of Contacts of the user
-	> 
+
 Once you display the name of each Contact, you will ask the user to select whose message to view. 
 
 The message will contain the Date and Time it was received, followed by the text message itself.
